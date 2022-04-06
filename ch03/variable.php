@@ -5,11 +5,11 @@
 /*
 multi-line comment
 */
-    $age = 21; // 프로그래밍언어 = 대입연산자 (오른쪽 값을 복사하여 왼쪽에 준다)
+    $age = 21; // 프로그래밍언어 = 대입연산자 (☆오른쪽 값을 복사하여 왼쪽에 준다☆매커니즘 중요). 같다.. 보다는! 지나고 나면 같아지는건 맞다.
     print "<div>" . $age . "</div>"; // . 을 만나면 모두 문자열로 바뀐다
 
     $name; // 변수 선언 후 나중에 작성 가능
-    print "<div>" . $name . "</div>";
+    print "<div>" . $name . "</div>"; //아무값이 없을때 그냥 빈칸 찍힘.
     print "<div>" . $name . "</div>";
     print "<div>" . $name . "</div>";
     print "<div>" . $name . "</div>";
@@ -19,10 +19,10 @@ multi-line comment
     $name = "홍길동"; // 첫번째 주는값:초기화, 그뒤로는:대입
     print "<div>" . $name . "</div>";
 
-    $name = "장보고";
+    $name = "장보고"; // 기존 홍길동 지워지고 장보고가 입력.
     print "<div>" . $name . "</div>";
 
-    $name = 10;
+    $name = 10; // php는 변수 타입(정수 등) 지정 안해도됨. 특이함.
     print "<div>" . $name . "</div>";
 
     /*
@@ -61,8 +61,10 @@ multi-line comment
     print "<div>" . 21 . "</div>";
 
     print "<div>" . "21" . "</div>";
-    print "<div>21" . "</div>";
-    print "<div>21</div>";
+    print "<div>21" . "</div>";     <- 연산되고 나면 이상태
+    print "<div>21</div>";      <-결국 마지막! 이 값이 프린트
 
-    . 을 만나면 문자열로 바뀜
+    . 을 만나면 문자열로 바뀜. 문자열 합치기
+
+    문자열 정수 문자열 -> 항상 문자가 이김.(우선순위가 가장 높음)
 -->

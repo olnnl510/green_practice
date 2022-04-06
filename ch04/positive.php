@@ -1,5 +1,5 @@
 <?php
-    $result = 1;
+    $result = 10;
     if($result > 0)
     {
         $result *= 0.2;

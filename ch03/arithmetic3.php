@@ -2,12 +2,12 @@
 
     $name = 1;
 
-    if(1 && 1 && 1 && -2 && 'a' && $name)
+    if(1 && 1 && 1 && -2 && 'a' && $name) //0만아니면 true, 문자열 : 비어있지만 않으면 true
     {
         print "나는 진실이다";
     }
 
-    if(1 || 1 || 1 || 1)
+    if(1 || 0 || 0 || 0)
     {
         print "I'm true";
     }
@@ -24,7 +24,7 @@
     문자열 : ''빈칸 false, 'a' 하나라도 있으면 true
     변수 선언 후 아무값도 안주면 : false
 
-    && : true 만들기가 힘듦. false 만들기가 쉬움. -> 1개라도 false면 전체가 false
+    && : true 만들기가 힘듦. false 만들기가 쉬움. -> 양쪽중 (3개든 4개든) 1개라도 false면 전체가 false
     || : false 만들기가 힘듦. true 만들기가 쉬움. -> 전체가 false여야 false (1개라도 true면 전체가 true)
 
     && : 앞쪽에 false 가능성 높을 값 배치, 굳이 뒤쪽까지 체크 안함. (성능을 위해서)
