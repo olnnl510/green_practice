@@ -1,5 +1,5 @@
 <?php
-    $dan = rand(2, 9); // 구구단
+    $dan = rand(2, 9); // 구구단 random 함수 호출 -> return값
 
     echo "$dan <br>";
 

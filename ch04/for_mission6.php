@@ -1,12 +1,12 @@
 <?php
-    for($i=1; $i<=9; $i++) // 2번째값
+    for($i=1; $i<=9; $i++)
     {
-        for($z=2; $z<=9; $z++) // 1번째값
+        for($z=2; $z<=9; $z++)
         {
         $result = $z * $i ;
-        print " $z x $i = $result" ;
+        print " $z x $i = $result" ; // 바뀌는 숫자 $z를 앞으로 자리바꿈
         }
-        print " <br> ";
+        print " <br> "; // 한줄이 끝난 후 br
     }
 
 
