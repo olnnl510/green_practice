@@ -16,13 +16,13 @@
             $val = rand(3, 10);
             print "val : $val";
 
-            $num = 1;
-            for($i=0; $i<$val; $i++)
+            $num = 1; // 외부 변수를 둔다
+            for($i=0; $i<$val; $i++) // tr val 숫자만큼 반복
             {
-                print "<tr>"; // 랜덤 수까지 줄 반복
+                print "<tr>";
                 for($z=0; $z<$val; $z++)
                 {
-                    print "<td>" . $num++ . "</td>"; // 랜덤 수까지 칸 반복
+                    print "<td>" . $num++ . "</td>"; // td val 숫자만큼 반복
                 }
                 print "</tr>";
             }
