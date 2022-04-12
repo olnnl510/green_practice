@@ -3,10 +3,6 @@
     print "<div class=\"11\">Hello PHP</div>";
 ?>
 
-
-
-
-
 <!--
     http://localhost/ch03/hello.php
     

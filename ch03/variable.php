@@ -15,7 +15,6 @@ multi-line comment
     print "<div>" . $name . "</div>";
     print "<div>" . $name . "</div>";
 
-
     $name = "홍길동"; // 첫번째 주는값:초기화, 그뒤로는:대입
     print "<div>" . $name . "</div>";
 
@@ -38,7 +37,6 @@ multi-line comment
     $_124 = "ㅁㅁㅁㅁ";
     print $_124;
 
-
 ?>
 
 <!-- 바깥에서의 주석-->
@@ -53,10 +51,7 @@ multi-line comment
     html 에서는 정수개념x 전부 문자열로 바뀜
     php 안에서는 타입 중요하지만, 결국 문자열로 바뀔것이다
     = 을 줘야만 변수값이 바뀜 ☆ 매커니즘 잘 이해
-    
--->
 
-<!-- 
     print "<div>" . $age . "</div>";
     print "<div>" . 21 . "</div>";
 
