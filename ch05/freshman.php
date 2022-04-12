@@ -27,12 +27,7 @@
     print "<br><br>";
     print_r($freshman);
 
-
-    
-    
-
 ?>
-
 
 <!--
     

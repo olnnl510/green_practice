@@ -19,10 +19,7 @@
     print "matrix count : " . count($matrix[1]) . "<br>";
     print "matrix count : " . count($matrix[2]) . "<br>";
 
-
 ?>
-
-
 
 <!--
     - 자식과 부모관계 매커니즘

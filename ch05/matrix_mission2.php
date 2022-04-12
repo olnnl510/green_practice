@@ -40,6 +40,4 @@ for($i=0; $i<count($names); $i++)
 
 }
 
-
-
 ?>
