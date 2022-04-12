@@ -1,6 +1,5 @@
 <?php
 
-
 print " -- 시작 -- <br>";
 while(true){ // 무한루프 줌
     $r_val = rand(1, 10);

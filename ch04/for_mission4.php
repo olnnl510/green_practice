@@ -20,33 +20,3 @@
     }
     echo "]";
 ?>
-
-<!--
-    echo "[";
-    for($i = 1; $i <= 7; $i++)
-    {
-        echo $i ;
-        if($i <= 6)
-        {
-            echo "," ;
-        }
-    }
-    echo "]";
-
-    if($i=1)
-    {
-        echo "[" . $i . "," ;
-    }
-
-    switch($i)
-    {case 1:
-        echo "[" . $i . "," ;
-        break;
-    case 2: 3: 4: 5: 6:
-        echo "$i," ;
-        break;
-    case 7:
-        echo "$i]" ;
-        break;
-    }
--->
