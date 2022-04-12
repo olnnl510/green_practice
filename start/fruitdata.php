@@ -23,7 +23,7 @@
             <th>가격</th>
         </tr>
     <?php 
-        foreach($fruit as $name => $price)
+        foreach($fruit as $name => $price) // 키값 , 벨류값 순차적으로
         {
             if($price < $low)
             {
