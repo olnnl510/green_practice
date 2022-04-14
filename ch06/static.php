@@ -2,8 +2,8 @@
 
     function inc()
     {
-        static $i = 1; // 최초 딱 1번만 실행
-        print $i . "<br>";
+        static $i = 1; // 함수 안 지역변수에 정적변수. 최초 딱 1번만 실행
+        print $i . "<br>"; // = print $i++ . "<br>";
         $i += 1;
     }
 
@@ -17,7 +17,7 @@
 
     for($i=0; $i<10; $i++)
     {
-        inc2();
+        inc();
     }
     
 ?>

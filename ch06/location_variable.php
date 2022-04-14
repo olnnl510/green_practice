@@ -1,12 +1,12 @@
 <?php
-    function make_ten()
+    function make_ten() // 함수정의
     {
         global $i; // 얘는 전역변수에 있는 아이야
         $i = $i + 10; // 지역변수 : 함수 안에 선언된 변수
     }
 
     $i = 5; // 전역변수 : 함수 바깥에 선언된 변수
-    make_ten();
+    make_ten(); // 함수호출
     print "i : $i <br>";
 
 ?>

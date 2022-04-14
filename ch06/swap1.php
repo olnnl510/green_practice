@@ -36,7 +36,7 @@
     // reference 참조값(메모리의 주소값)의 이해 필요!
 
     call by value : 내 공간은 알려주지 않고 갖고 있는 값만 복사해서 준것
-    call by reference : 내 공간에 접근할수 있는 주소값(권한)을 준것
+    call by reference : 내 공간에 접근할수 있는 메모리 주소값(권한)을 준것
 
     안쪽에서 global 선언하지 않고 외부에 있는 값 변경할수있는 유일한 방법
     : call by reference(&)

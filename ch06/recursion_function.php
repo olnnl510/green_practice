@@ -1,10 +1,5 @@
 <?php // 재귀함수 : 내가 함수라면 내가 나를 호출하는 것. factorial 만들때 많이 씀.
 
-$num = 3;
-$result = factorial($num); // 3 x 2 x 1
-print "${num}! = $result <br>";
-
-
 function factorial($num)
 {
     $result = 1;
@@ -14,8 +9,6 @@ function factorial($num)
     }
     return $result;
 }
-
-
 
 function factorial2($num)
 {    
@@ -27,13 +20,32 @@ function factorial2($num)
     return $result;
 }
 
-
 function factorial_rec($num) // for문과 같은 효과. 함수 안에서 또 호출
 {
     if($num ===1) { return 1; } // 끝
     return $num * factorial_rec($num - 1);
 }
+
+//절대값 만들기
+
+function my_abs($val)
+{
+    /*
+    if($val < 0){
+        return $val * (-1); // = return -$val;
+    }
+    return $val;
+    */
+    return $val < 0 ? -$val : $val;
+}
+print "my_abs(-3) : " . my_abs(-3) . "<br>"; // 3이 출력되는지 확인
+print "my_abs(3) : " . my_abs(3) . "<br>"; // 3이 출력되는지 확인
+
+$num = abs(-3);
+$result = factorial_rec($num); // 3! > 3 x 2 x 1
+print "${num}! = $result <br>";
 ?>
+
 
 
 <!--
