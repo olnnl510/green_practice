@@ -24,9 +24,7 @@
 <!--
 
 -쿼리스트링
-
 url / ? 쿼리스트링
-
 ? key = value & key = value & key = value &
 
 
