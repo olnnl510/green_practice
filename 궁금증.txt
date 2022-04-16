@@ -1,0 +1,56 @@
+[ch03]
+
+-----
+operator.php
+
+Q 왜 그냥
+print "$num는(은) 짝수입니다.";
+를 찍으면 에러가 뜨는걸까?
+
+A $num 변수 선언 한적 없기때문에 "는" 까지 같이 변수명으로 찍혀서.
+
+Q $num = 10;
+이것이 변수선언과 동시에 초기화 한것 아닌가?ㅠㅠ
+
+-----
+
+[ch04]
+
+-----
+
+break_continue.php
+
+Q 왜 $i=12 를 하면 무한루프를 도는걸까?
+
+-----
+
+do_while.php
+
+Q 일단 do에 있는것 실행한 후 -> while이 아니라면 ??? 끝? (브레이크)
+
+-----
+
+for_mission10.php 해결x
+mission1.php 해결x
+
+-----
+
+positive.php
+
+Q $result 값에 -1 넣으면 Negative 뜨는 이유? *0.5 먹히지 않아서?????
+반으로 쪼개지지 않아서?
+
+-----
+
+[ch05]
+
+-----
+
+array_index,php
+
+Q Warning: Undefined array key 3 in C:\Bitnami\wampstack-8.1.4-0\apache2\htdocs\2022_PHP-main\ch05\array_index.php on line 12
+
+12번째줄 에러나는 이유?
+
+-----
+
