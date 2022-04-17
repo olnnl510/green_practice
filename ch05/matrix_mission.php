@@ -23,7 +23,7 @@
     $names = array("영수", "순자", "영철");
     $each_scores = array(0, 0, 0);
 
-    for($i=0, $i<count($scores); $i++) // i를 score변수의 배열 개수 array 3개 (3) 까지 반복
+    for($i=0; $i<count($scores); $i++) // i를 score변수의 배열 개수 array 3개 (3) 까지 반복
     {
         for($z=0; $z<count($scores[$i]); $z++) // z를 score변수의 n번째 배열 개수 (3) 까지 반복
         {
