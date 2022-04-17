@@ -55,3 +55,16 @@ Q Warning: Undefined array key 3 in C:\Bitnami\wampstack-8.1.4-0\apache2\htdocs\
 -----
 
 bubble_sort.php 해결x
+matrix_mission.php 해결x
+matrix_mission2.php 해결x
+selection_sort.php 해결x
+
+-----
+
+matrix_mission.php
+
+Q $each_sum[$i] += $scores[$i][$z];
+지독히도 헷갈리는 너란녀석.....
+
+-----
+
