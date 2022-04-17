@@ -54,3 +54,4 @@ Q Warning: Undefined array key 3 in C:\Bitnami\wampstack-8.1.4-0\apache2\htdocs\
 
 -----
 
+bubble_sort.php 해결x
