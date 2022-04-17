@@ -8,56 +8,18 @@
     $names = array("영수", "순자", "영철"); // 새로운 변수 선언. 배열처리 이름 맥임
     $each_sum = array(0, 0, 0); // 새로운 변수 선언. 영수총점수 순자총점수 영철총점수
 
-    for($i=0; $i<count($scores); $i++) //2차원 : 중첩for문 줄선택 / 컬럼 컬럼 컬럼
+    for($i=0; $i<count($scores); $i++) //2차원 : 중첩for문 줄선택 / 컬럼 컬럼 컬럼 / i를 score변수의 배열 개수 array 3개 (3) 까지 반복
     {                   //3
-        for($z=0; $z<count($scores[$i]); $z++) // i0 = array0 count:3 , i1 = array1 count:3
+        for($z=0; $z<count($scores[$i]); $z++) // i0 = array0 count:3 , i1 = array1 count:3 / z를 score변수의 n번째 배열 개수 (3) 까지 반복
         {
-            $each_sum[$i] += $scores[$i][$z];
+            $each_sum[$i] += $scores[$i][$z];  // ex) each_sum 변수[n번째] = score변수 n번째 배열 + n번째 배열
         }
     }
     for($i=0; $i<count($names); $i++)
     {
-        print $names[$i] . " : " . $each_sum[$i] . "<br>"; // ex) names변수 1번째 배열(영수)는 = 총합
+        $avg =  $each_sum[$i] / count($scores[$i]);
+        print $names[$i] . " - sum: " . $each_sum[$i] . " avg: $avg <br>"; // ex) names변수 1번째 배열(영수)는 = 총합
     }
-
-    $names = array("영수", "순자", "영철");
-    $each_scores = array(0, 0, 0);
-
-    for($i=0; $i<count($scores); $i++) // i를 score변수의 배열 개수 array 3개 (3) 까지 반복
-    {
-        for($z=0; $z<count($scores[$i]); $z++) // z를 score변수의 n번째 배열 개수 (3) 까지 반복
-        {
-            $each_scores[$i] += $scores[$i][$z]; // ex) each_scores 변수[n번째] = score변수 n번째 배열 + n번째 배열
-        }
-    }
-    for($i=0; $i<count($names); $i++)
-    {
-        print $names[$i] . " : " . $each_scores[$i] . "<br>";
-
-    }
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ?>
 
