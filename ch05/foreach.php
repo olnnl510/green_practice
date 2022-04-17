@@ -16,3 +16,11 @@ foreach($array as $key => $val) // 변수명 아무거나 해도됨
 print " --------------------<br> ";
 
 ?>
+
+
+<!--
+
+두 가지 문법 중 첫 번째 문법은 배열의 원소만 가져오고, 두 번째 문법은 키(key)와 원소(value)를 가져 옵니다. 이 중 첫 번째 문법이 더 자주 사용됩니다.
+https://www.habonyphp.com/2019/02/foreach.html
+
+-->
