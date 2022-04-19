@@ -9,20 +9,35 @@
     
     $conn = get_conn(); // 데이터베이스와 커넥션
     $sql = "INSERT INTO t_board (title, ctnt) VALUES ('${title}', '${ctnt}')";
-   
     $result = mysqli_query($conn, $sql);
+
     mysqli_close($conn); // 연결 닫는거 !!!
     print "result : $result <br>";
     header("Location: list.php"); // 리다이렉트
 ?>
+<!--
+db.php 포함
 
+변수 : title값 POST로 받아옴
+변수 : ctnt값 POST로 받아옴
+프린트title
+프린트ctnt
+
+변수 : get_conn 함수(db랑연결)
+변수 : 쿼리문 (쓰기);
+변수 : 결과=커넥정보/실행시킬쿼리문 (영향줄수)
+
+커넥닫음
+프린트 결과(영향줄수)
+리다이렉트(list로)
+-->
 <!--
 고객이 무언가 작성한 창을 저장하는 역할
 클라이언트가 서버한테 보낸 값을 받을때 쓰는것.
 
 - $conn = get_conn(); // 데이터베이스와 커넥션
 
-- $result = mysqli_query($nonn, $sql);
+- $result = mysqli_query($conn, $sql);
 커넥션 정보 / 실행시킬 쿼리문
 커넥션 이용하여 쿼리문 실행. 0 넘어왔으면 insert 안된것.
 ~행에 대한 정보가 넘어옴. (~행에 영향을 미쳤다! 숫자(행 수)가 넘어옴.)

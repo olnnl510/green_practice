@@ -33,7 +33,29 @@
     <div>내용 : <?= $ctnt ?></div>
 </body>
 </html>
+<!--
+db.php 포함
+변수 : 키값 get으로 받아옴
+변수 : 쿼리문(선택)
 
+변수 : get_conn 함수(db랑연결)
+변수 : 결과=커넥정보/실행시킬쿼리문 (영향줄수)
+커넥닫음
+
+만약에~줄~1개씩 리턴한다면
+    변수:제목~줄(제목)
+    변수:내용~줄(내용)
+    변수:작성일시~줄(작성일시)
+
+a태그: list.php 리스트버튼
+a태그: del_proc.php?i_board값 삭제버튼
+a태그: mod.php?i_board값 수정버튼
+
+<div>제목~
+<div>작성일시~
+<div>내용~
+
+-->
 <!--
 mysqli_connect는 MySQL server 또는 MariaDB Server에 연결하는 함수입니다.
 

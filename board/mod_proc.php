@@ -12,7 +12,20 @@
     mysqli_close($conn);
     header("Location: detail.php?i_board=${i_board}"); 
 ?>
+<!--
+db.php 포함
 
+변수 : i_board값 post방식으로 받아옴
+변수 : 제목 post방식으로 받아옴
+변수 : 내용 post방식으로 받아옴
+
+변수 : 쿼리문(수정)
+
+변수 : get_conn 함수(db랑연결)
+변수 : 결과=커넥정보/실행시킬쿼리문 (영향줄수)
+커넥닫음
+리다이렉트
+-->
 <!--
 -쿼리스트링
 url / ? 쿼리스트링

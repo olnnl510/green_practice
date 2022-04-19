@@ -12,6 +12,6 @@
 
     $result = mysqli_query($conn, $sql);
     mysqli_close($conn);
-    print " result : $result <br>";
+    print "result : $result <br>";
     header("Location: list.php");
 ?>
