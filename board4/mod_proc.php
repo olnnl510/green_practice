@@ -11,16 +11,5 @@
     $result = mysqli_query($conn, $sql);
     mysqli_close($conn);
 
-    header("Location: detail.php?i_board=${i_board}"); // 수정 완료 후 detail.php 로 이동
+    header("Location: detail.php?i_board=${i_board}");
 ?>
-
-<!--
-
--쿼리스트링
-
-url / ? 쿼리스트링
-
-? key = value & key = value & key = value &
-
-
--->

@@ -33,14 +33,3 @@
     <div>내용 : <?= $ctnt ?></div>
 </body>
 </html>
-
-<!--
-mysqli_connect는 MySQL server 또는 MariaDB Server에 연결하는 함수입니다.
-
-mysqli_query 함수는 mysqli_connect 를 통해 연결된 객체를 이용하여 MySQL 쿼리를 실행시키는 함수입니다.
-
-mysqli_fetch_assoc 함수는 mysqli_query 를 통해 얻은 리절트 셋(result set)에서 레코드를 1개씩 리턴해주는 함수
-
-
-출처: https://solbel.tistory.com/1038 [개발자의 끄적끄적]
--->
