@@ -1,7 +1,7 @@
 <?php
     include_once "db.php";
 
-    $i_board = $_GET['i_board'];
+    $i_board = $_GET["i_board"];
     $sql = "SELECT * FROM t_board WHERE i_board = $i_board";
 
     $conn = get_conn();
@@ -10,9 +10,9 @@
 
     if($row = mysqli_fetch_assoc($result))
     {
-        $title = $row['title'];
-        $ctnt = $row['ctnt'];
-        $create_at = $row['create_at'];
+        $title = $row["title"];
+        $ctnt = $row["ctnt"];
+        $create_at = $row["create_at"];
     }
 ?>
 

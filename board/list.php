@@ -27,9 +27,9 @@
         <?php 
             while($row = mysqli_fetch_assoc($result))
             {
-                $i_board = $row['i_board'];
-                $title = $row['title'];
-                $create_at = $row['create_at'];
+                $i_board = $row["i_board"];
+                $title = $row["title"];
+                $create_at = $row["create_at"];
                 print "<tr>";
                 print "<td>${i_board}</td>";
                 print "<td><a href='detail.php?i_board=${i_board}'>${title}</a></td>";
@@ -40,7 +40,6 @@
     </table>
 </body>
 </html>
-
 
 <!--
 mysqli_connect는 MySQL server 또는 MariaDB Server에 연결하는 함수입니다.
