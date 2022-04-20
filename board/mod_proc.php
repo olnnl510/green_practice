@@ -34,3 +34,8 @@ url / ? 쿼리스트링
 - header
 // 수정 완료 후 detail.php 로 이동
 -->
+
+<!--
+수정한 내용을 업데이트문으로 작성
+앞에 mod에서 form태그로 post값을 썼으므로 i_baord값 post로 얻어옴.
+-->

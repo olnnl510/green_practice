@@ -14,22 +14,7 @@
         $ctnt = $row['ctnt'];
     } 
 ?>
-<!--
-db.php 포함
 
-변수 : i_board값 get으로 받아옴
-변수 : 쿼리문(선택)
-
-변수 : get_conn 함수(db랑연결)
-변수 : 결과=커넥정보/실행시킬쿼리문 (영향줄수)
-커넥닫음
-
-만약에~줄~1개씩 리턴한다면
-{
-    변수 : 줄~제목
-    변수 : 줄~내용
-}
--->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,6 +39,22 @@ db.php 포함
 </html>
 
 <!--
+db.php 포함
+
+변수 : i_board값 get으로 받아옴
+변수 : 쿼리문(선택)
+
+변수 : get_conn 함수(db랑연결)
+변수 : 결과=커넥정보/실행시킬쿼리문 (영향줄수)
+커넥닫음
+
+만약에~줄~1개씩 리턴한다면
+{
+    변수 : 줄~제목
+    변수 : 줄~내용
+}
+-->
+<!--
     mod : write detail 합쳐놓은것같다 
 
 [최우원] [오전 11:15] detail, 수정, 삭제, 리스트는 무조건 pk가 필요하다
@@ -69,4 +70,9 @@ mysqli_fetch_assoc 함수는 mysqli_query 를 통해 얻은 리절트 셋(result
 
 
 출처: https://solbel.tistory.com/1038 [개발자의 끄적끄적]
+-->
+
+<!--
+수정할 창을 불러오는 것이므로 select
+get방식으로 i_board를 불러옴
 -->

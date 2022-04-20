@@ -1,8 +1,8 @@
 <?php
     include_once "db.php";
 
-    $conn = get_conn();
     $sql = "SELECT i_board, title, create_at FROM t_board ORDER BY i_board DESC";
+    $conn = get_conn();
     $result = mysqli_query($conn, $sql);
     mysqli_close($conn);
 ?>
@@ -69,3 +69,4 @@ mysqli_fetch_assoc 함수는 mysqli_query 를 통해 얻은 리절트 셋(result
 출처: https://solbel.tistory.com/1038 [개발자의 끄적끄적]
 
 -->
+<!-- list.php 주소 보면 i_board 값 GET으로 안가져와도 되는것을 알 수 있다.-->

@@ -10,8 +10,11 @@
         return mysqli_connect(URL, USERNAME, PASSWORD, DB_NAME, PORT);
     }
 ?>
-    
 <!--
+DB_NAME : board1
+table : t_board
+pk값 : i_board
+
 - mysqli_connect : mysqli_connect는 MySQL server 또는 MariaDB Server에 연결하는 함수입니다.
 
     stream
@@ -35,4 +38,28 @@ Delete 삭제 : del_proc.php
 
  - 순서
  db > write > write_proc > list.php > detail > del_proc > mod > mod_proc
+
+- 쿼리문
+
+<Create>
+- write_proc.php
+$sql = "INSERT INTO t_board (title, ctnt) VALUES ('${title}', '${ctnt}')";
+
+<Read>
+- list.php
+$sql = "SELECT i_board, title, create_at FROM t_board ORDER BY i_board DESC";
+
+- detail.php
+$sql = "SELECT * FROM t_board WHERE i_board = $i_board";
+
+<Update>
+- mod.php
+$sql = "SELECT title, ctnt FROM t_board WHERE i_board = $i_board";
+
+- mod_proc.php
+$sql = "UPDATE t_board SET title = '$title', ctnt = '$ctnt', mod_at = now() WHERE i_board = $i_board";
+
+<Delete>
+- del_proc.php
+$sql = "DELETE FROM t_board WHERE i_board = $i_board";
 -->

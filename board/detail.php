@@ -33,6 +33,7 @@
     <div>내용 : <?= $ctnt ?></div>
 </body>
 </html>
+
 <!--
 db.php 포함
 변수 : 키값 get으로 받아옴
@@ -65,4 +66,34 @@ mysqli_fetch_assoc 함수는 mysqli_query 를 통해 얻은 리절트 셋(result
 
 
 출처: https://solbel.tistory.com/1038 [개발자의 끄적끄적]
+-->
+
+<!--
+    -원본
+    include_once "db.php";
+
+    $i_board = $_GET["i_board"];
+    $sql = "SELECT * FROM t_board WHERE i_board = $i_board";
+
+    $conn = get_conn();
+    $result = mysqli_query($conn, $sql);
+    mysqli_close($conn);
+
+    if($row = mysqli_fetch_assoc($result))
+    {
+        $title = $row["title"];
+        $ctnt = $row["ctnt"];
+        $create_at = $row["create_at"];
+    }
+-->
+
+<!--
+GET 방식 : URL로 불러온값
+POST 방식 : form으로 불러온값
+-->
+
+<!--
+select 전체 다 불러와도됨 (i_board 하나만 불러오는거니까!)
+if문
+php축약문
 -->

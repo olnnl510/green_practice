@@ -7,8 +7,8 @@
     print "title : $title <br>";
     print "ctnt : $ctnt <br>";
     
-    $conn = get_conn(); // 데이터베이스와 커넥션
     $sql = "INSERT INTO t_board (title, ctnt) VALUES ('${title}', '${ctnt}')";
+    $conn = get_conn(); // 데이터베이스와 커넥션
     $result = mysqli_query($conn, $sql);
 
     mysqli_close($conn); // 연결 닫는거 !!!
