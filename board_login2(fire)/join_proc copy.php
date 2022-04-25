@@ -1,0 +1,24 @@
+<?php
+    include_once "db.php";
+
+    $uid = $_POST["uid"];
+    $upw = $_POST["upw"];
+    $confirm_upw = $_POST["confirm_upw"];
+    $nm = $_POST["nm"];
+    $gender = $_POST["gender"];
+
+    $param = [ // 배열로 찍어준다
+        "uid" => $uid,
+        "upw" => $upw,
+        "nm" => $nm,
+        "gender" => $gender,
+    ];
+
+    $result = user_join($param);
+
+    echo "result : " , $result , "<br>";
+    echo "uid : " , $uid , "<br>";
+    echo "upw : " , $upw , "<br>";
+    echo "nm : " , $nm , "<br>";
+    echo "gender : " , $gender , "<br>";
+?>

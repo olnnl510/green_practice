@@ -9,5 +9,4 @@
     {
         return mysqli_connect(URL, USERNAME, PASSWORD, DB_NAME, PORT);
     }
-
-// 커넥션 담당
+?>
