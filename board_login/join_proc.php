@@ -23,7 +23,7 @@
     echo "nm : ", $nm, "<br>";
     echo "gender : ", $gender, "<br>";
 
-    header("Location: login.php");
+    // header("Location: login.php");
 
 // 5가지 정보 받아서
 // 잘 받아졌는지 화면에 뿌려보기

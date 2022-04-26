@@ -16,7 +16,7 @@
         "; // 문자열이기 때문에 홑따옴표 넣어줘야함
         $result = mysqli_query($conn, $sql); // 쿼리를 실행시켜줌. 커넥션정보, 실행할쿼리 2개 필요함
         mysqli_close($conn);
-        return $result; // 넘어온 값 return 
+        return $result; // 넘어온 값 return
     }
 
 function sel_user($param) {
