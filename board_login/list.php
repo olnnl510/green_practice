@@ -1,17 +1,26 @@
-<?php   
+<?php
     include_once "db/db_board.php"; // include = import = require
     
     session_start();
     $nm = "";
+    $page = $_GET["page"];
+    if(!$page) {
+        $page = 1;
+    } else {
+        $page = intval($page); // string값을 정수형으로 변환시켜주는 함수 (형변환)
+    } // list.php 바로 치면 쿼리스트링x페이지 없을때
+    print " page : " . $page;
     if(isset($_SESSION["login_user"])) {
         $login_user = $_SESSION["login_user"];
         $nm = $login_user["nm"];
     }
+    $row_count = 20;
     $param = [
-        "row_count" => 20 // 일단 하드코딩. 1페이지당 15개
+        "row_count" => $row_count, // 일단 하드코딩. 1페이지당 15개
+        "start_idx" => ($page - 1 ) * $row_count // idx = index
     ];
     $paging_count = sel_paging_count($param); // 6이 넘어옴
-    $list = sel_board_list(); // 밑에서 반복문으로 뿌림
+    $list = sel_board_list($param); // 밑에서 반복문으로 뿌림
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +37,7 @@
             <?=isset($_SESSION["login_user"]) ? "<div>". $nm . "님 환영합니다.</div>" : "" ?>
             <div>
                 <a href="list.php">리스트</a>
-                <?php if(isset($_SESSION["login_user"])) { ?>
+                <?php if(isset($_SESSION["login_user"])) { ?> <!-- isset 변수값이 존재한다 면-->
                     <a href="write.php">글쓰기</a>
                     <a href="logout.php">로그아웃</a>
                 <?php } else { ?>
@@ -48,7 +57,7 @@
                     </tr>
                 </thead>
                 <tbody> <!-- foreach 돌면서 list배열의 내용물을 $item에다가 하나하나 넣는것-->
-                    <?php foreach($list as $item) { ?>
+                    <?php foreach($list as $item) { ?> <!-- 배열 as 값 -->
                         <tr>
                             <td><?=$item["i_board"]?></td>
                             <td><a href="detail.php?i_board=<?=$item["i_board"]?>"><?=$item["title"]?></a></td>
@@ -60,7 +69,7 @@
             </table>
             <div>
                 <?php for($i=1; $i<=$paging_count; $i++){ ?>
-                    <span><?=$i?></span>
+                    <span><a href="list.php?page=<?=$i?>"><?=$i?></span>
                 <?php } ?>
             </div>
         </main>
@@ -98,4 +107,14 @@
                         print "<td>$item['created_at']</td>";
                         print "</tr>";
                     }
+-->
+
+<!--
+    PHP에서 foreach 문은 배열의 원소나, 객체의 프로퍼티 수만큼 반복하여 동작하는 구문입니다.
+foreach는 배열의 원소나, 객체의 프로퍼티에 값 하나하나에 대해 처리하는 경우에 for 문보다 깔끔한 코드를 만들어 낼 수 있습니다.
+
+방법1 : Value만 가져오는 경우
+foreach($array as $value)
+
+출처: https://extbrain.tistory.com/24 [확장형 뇌 저장소]
 -->

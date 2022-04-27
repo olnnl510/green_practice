@@ -24,7 +24,9 @@
         return $row["cnt"];
     }
 
-    function sel_board_list(){ // 다 뿌릴꺼니까 파라미터 필요없음 (외부로부터 값을 받지 않을것이다 = 혼자서 해결 가능)
+    function sel_board_list(&$param){ // 다 뿌릴꺼니까 파라미터 필요없음 (외부로부터 값을 받지 않을것이다 = 혼자서 해결 가능)
+        $start_idx = $param["start_idx"];
+        $row_count = $param["row_count"];
         $sql = "SELECT A.i_board, A.title, B.nm, B.i_user, A.created_at
                 FROM t_board A
                 INNER JOIN t_user B
@@ -58,20 +60,6 @@
         return mysqli_fetch_assoc($result);
     }
     
-    function del_board(&$param){
-        $i_board = $param["i_board"];
-        $i_user = $param["i_user"];
-
-        $sql = "DELETE FROM t_board
-        WHERE i_board = $i_board
-        AND i_user = $i_user";
-
-        $conn = get_conn();
-        $result = mysqli_query($conn, $sql);
-        mysqli_close($conn);
-        return $result;
-    }
-
     function upd_board(&$param){
         $i_board = $param["i_board"];
         $i_user = $param["i_user"];
@@ -88,9 +76,25 @@
         mysqli_close($conn);
         return $result;
     }
+
+    function del_board(&$param){
+        $i_board = $param["i_board"];
+        $i_user = $param["i_user"];
+
+        $sql = "DELETE FROM t_board
+        WHERE i_board = $i_board
+        AND i_user = $i_user";
+
+        $conn = get_conn();
+        $result = mysqli_query($conn, $sql);
+        mysqli_close($conn);
+        return $result;
+    }
 ?>
 
 <!--
+CRUD순서
+
 페이징처리, 댓글쓰기, 예외처리..
 카운트(조회수)는 나중에
 -->
