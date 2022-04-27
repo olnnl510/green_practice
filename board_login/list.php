@@ -1,5 +1,5 @@
 <?php   
-    include_once "db/db_board.php";
+    include_once "db/db_board.php"; // include = import = require
     
     session_start();
     $nm = "";
@@ -7,7 +7,11 @@
         $login_user = $_SESSION["login_user"];
         $nm = $login_user["nm"];
     }
-    $list = sel_board_list();
+    $param = [
+        "row_count" => 20 // 일단 하드코딩. 1페이지당 15개
+    ];
+    $paging_count = sel_paging_count($param); // 6이 넘어옴
+    $list = sel_board_list(); // 밑에서 반복문으로 뿌림
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -54,6 +58,11 @@
                     <?php } ?>
                 </tbody>
             </table>
+            <div>
+                <?php for($i=1; $i<=$paging_count; $i++){ ?>
+                    <span><?=$i?></span>
+                <?php } ?>
+            </div>
         </main>
     </div>
 </body>

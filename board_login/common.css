@@ -3,7 +3,8 @@
     margin: 0;}
 html, body { height: 100%; }
 
-#container { display: grid;
+#container {
+            display: grid;
             grid-template-rows: 100px 1fr;
             min-height: 100vh; }
 
