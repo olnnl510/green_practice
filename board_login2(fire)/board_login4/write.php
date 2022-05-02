@@ -1,7 +1,3 @@
-<?php
-    session_start();
-    $login_user = $_SESSION["login_user"]; // 여기에 i_user값 저장되어 있음
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,8 +19,3 @@
     </form>
 </body>
 </html>
-
-<!--
-form태그에서 i_user박아서 보내면 안됨. 얼마든지 바꿀수있음(hidden이라도)
-GET 방식 : a태그, 검색
- -->

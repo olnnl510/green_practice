@@ -9,7 +9,7 @@ $login_user = $_SESSION["login_user"]; // 로그인 pk값
 $i_user = $login_user["i_user"]; // 글쓴이 pk값
 
 $param = [
-    "i_user" => $i_user,
+    "i_user" => $i_user, // Q 왜받아오지? 어디쓰려고?
     "title" => $title,
     "ctnt" => $ctnt,
 ];

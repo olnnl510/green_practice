@@ -16,12 +16,12 @@
     
     $result = ins_user($param); // 함수 호출, = 왼쪽으로 값을 보내준다(대입), 리턴값을 받아온다
     
-    echo "result : ", $result, "<br>"; // 빈칸(false) or 1(true) 조인실패,성공
-    echo "uid : ", $uid, "<br>";
-    echo "upw : ", $upw, "<br>";
-    echo "confirm_upw : ", $confirm_upw, "<br>";
-    echo "nm : ", $nm, "<br>";
-    echo "gender : ", $gender, "<br>";
+    echo "result : " , $result , "<br>"; // 빈칸(false) or 1(true) 조인실패,성공
+    echo "uid : " , $uid , "<br>";
+    echo "upw : " , $upw , "<br>";
+    echo "confirm_upw : " , $confirm_upw , "<br>";
+    echo "nm : " , $nm , "<br>";
+    echo "gender : " , $gender , "<br>";
 
     // header("Location: login.php");
 

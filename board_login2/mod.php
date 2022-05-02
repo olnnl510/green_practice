@@ -1,10 +1,10 @@
 <?php
-    include_once "db/db_board.php";   
+    include_once "db/db_board.php";
     $i_board = $_GET["i_board"];
     $param = [
         "i_board" => $i_board
     ];
-    $item = sel_board($param);
+    $item = sel_board($param); // Q detail 에서 쓴 함수 또씀
 ?>
 
 <!DOCTYPE html>
@@ -18,15 +18,13 @@
 <body>
     <h1>글수정</h1>
     <form action="mod_proc.php" method="post">
-        <input type="hidden" name="i_board" value="<?=$i_board?>" readonly>
+        <input type="hidden" name="i_board" value="<?=$i_board?>" readolny>
         <div><input type="text" name="title" placeholder="제목" value="<?=$item["title"]?>"></div>
         <div><textarea name="ctnt" placeholder="내용"><?=$item["ctnt"]?></textarea></div>
         <div>
-            <input type="submit" value="글수정">
-            <input type="reset" value="초기화">
+            <input type="submit" values="글수정">
+            <input type="reset" values="초기화">
         </div>
     </form>
 </body>
 </html>
-
-<!-- mod = 로직detail(sel_board함수 또씀) + 화면write -->

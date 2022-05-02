@@ -6,7 +6,10 @@
         $title = $param["title"];
         $ctnt = $param["ctnt"];
 
-        $sql = "INSERT INTO t_board (i_user, title, ctnt) VALUES ($i_user, '${title}', '${ctnt}')"; // 정수형 '' 안붙임
+        $sql =
+        "   INSERT INTO t_board (i_user, title, ctnt)
+            VALUES ($i_user, '${title}', '${ctnt}')
+        "; // 정수형 '' 안붙임
         
         $conn = get_conn();
         $result = mysqli_query($conn, $sql);
@@ -16,7 +19,9 @@
 
     function sel_paging_count(&$param) {
         $row_count = $param["row_count"];
-        $sql = "SELECT CEIL(COUNT(i_board) / $row_count) AS cnt FROM t_board";
+        $sql = "SELECT CEIL(COUNT(i_board) / $row_count)
+                AS cnt
+                FROM t_board";
         $conn = get_conn();
         $result = mysqli_query($conn, $sql);
         mysqli_close($conn);
@@ -49,10 +54,10 @@
         $ctnt = $param["ctnt"];
 
         $sql = "SELECT B.i_user, A.title, B.nm, A.created_at, A.ctnt
-        FROM t_board A
-        INNER JOIN t_user B
-        ON A.i_user=B.i_user
-        WHERE A.i_board=${i_board}";
+                FROM t_board A
+                INNER JOIN t_user B
+                ON A.i_user=B.i_user
+                WHERE A.i_board=${i_board}";
 
         $conn = get_conn();
         $result = mysqli_query($conn, $sql);
@@ -69,7 +74,7 @@
         $sql = "UPDATE t_board
                 SET title='$title', ctnt='$ctnt', updated_at=now()
                 WHERE i_board = $i_board
-                AND i_user = $i_user";
+                AND i_user = $i_user"; // 다른사람이 수정x
 
         $conn = get_conn();
         $result = mysqli_query($conn, $sql);
@@ -82,8 +87,8 @@
         $i_user = $param["i_user"];
 
         $sql = "DELETE FROM t_board
-        WHERE i_board = $i_board
-        AND i_user = $i_user";
+                WHERE i_board = $i_board
+                AND i_user = $i_user";
 
         $conn = get_conn();
         $result = mysqli_query($conn, $sql);

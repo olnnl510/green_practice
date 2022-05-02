@@ -17,11 +17,7 @@
     ];
 
     $result = upd_board($param);
-    if($result){
-        header("Location: detail.php?i_board=$i_board");
+    if($result) {
+        header("Location:detail.php?i_board=$i_board");
     }
 ?>
-
-<!-- 세션 i_user 써야함 -->
-<!-- mod = 로직detail + 화면write -->
-<!-- mod = 로직detail(sel_board함수 또씀) + 화면write -->

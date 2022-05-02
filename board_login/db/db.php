@@ -12,3 +12,29 @@
 
 // 커넥션 담당
 // htdoc : httpdocument
+
+// -db
+// db_board.php
+// db_user.php
+// db.php
+
+// -
+// css
+
+// join.php
+// join_proc.php
+
+// login.php
+// login_proc.php
+// logout.php
+
+// write.php
+// write_proc.php
+
+// list.php
+// detail.php
+
+// mod.php
+// mod_proc.php
+
+// del.php
