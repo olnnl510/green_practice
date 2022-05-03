@@ -62,7 +62,7 @@
         $conn = get_conn();
         $result = mysqli_query($conn, $sql);
         mysqli_close($conn);
-        return mysqli_fetch_assoc($result);
+        return mysqli_fetch_assoc($result); // 쿼리문으로 나온 결과를 한줄씩 배열로 넣어주는 함수!
     }
     
     function upd_board(&$param){
@@ -71,7 +71,7 @@
         $title = $param["title"];
         $ctnt = $param["ctnt"];
 
-        $sql = "UPDATE t_board
+        $sql ="UPDATE t_board
                 SET title='$title', ctnt='$ctnt', updated_at=now()
                 WHERE i_board = $i_board
                 AND i_user = $i_user"; // 다른사람이 수정x
@@ -86,9 +86,11 @@
         $i_board = $param["i_board"];
         $i_user = $param["i_user"];
 
-        $sql = "DELETE FROM t_board
-                WHERE i_board = $i_board
-                AND i_user = $i_user";
+        $sql =
+        "   DELETE FROM t_board
+            WHERE i_board = $i_board
+            AND i_user = $i_user
+        ";
 
         $conn = get_conn();
         $result = mysqli_query($conn, $sql);

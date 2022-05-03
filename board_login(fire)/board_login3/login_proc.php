@@ -1,6 +1,6 @@
 <?php
     include_once "db/db_user.php";
-    
+
     $uid = $_POST["uid"];
     $upw = $_POST["upw"];
 
@@ -24,7 +24,15 @@
         session_start();
         $_SESSION["login_user"] = $result;
         header("Location: list.php");
-    } else {
+    }
+    else {
         header("Location: login.php");
     }
+
+    
+    
+
+    
+
+
 ?>

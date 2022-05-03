@@ -1,5 +1,5 @@
 <?php
-    include_once "db/db_user.php";
+    include_once "db.php";
 
     $uid = $_POST["uid"];
     $upw = $_POST["upw"];
@@ -7,19 +7,18 @@
     $nm = $_POST["nm"];
     $gender = $_POST["gender"];
 
-    $param = [
+    $param = [ // 배열로 찍어준다
         "uid" => $uid,
         "upw" => $upw,
-        "confirm_upw" => $confirm_upw,
         "nm" => $nm,
         "gender" => $gender,
     ];
 
-    $result = ins_user($param);
-    
+    $result = user_join($param);
+
     echo "result : " , $result , "<br>";
     echo "uid : " , $uid , "<br>";
     echo "upw : " , $upw , "<br>";
-    echo "confirm_upw : " , $confirm_upw , "<br>";
     echo "nm : " , $nm , "<br>";
     echo "gender : " , $gender , "<br>";
+?>

@@ -12,7 +12,7 @@
         <div><input type="text" name="uid" placeholder="아이디"></div>
         <div><input type="password" name="upw" placeholder="비밀번호"></div>
         <div><input type="submit" value="로그인"></div>
-        <a href="join.php">회원가입</a>
     </form>
+    <a href="join.php">회원가입</a>
 </body>
 </html>

@@ -1,6 +1,7 @@
 <?php
     include_once "db/db_user.php";
-    
+    session_start();
+
     $uid = $_POST["uid"];
     $upw = $_POST["upw"];
 
@@ -18,10 +19,9 @@
     }
 
     echo "i_user : " , $result["i_user"] , "<br>";
-    echo "upw : " , $result["upw"] , "<br>";
+    echo "pw : " , $result["upw"] , "<br>";
 
-    if($upw == $result["upw"]) {
-        session_start();
+    if($upw === $result["upw"]) {
         $_SESSION["login_user"] = $result;
         header("Location: list.php");
     } else {

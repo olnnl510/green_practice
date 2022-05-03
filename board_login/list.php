@@ -34,7 +34,7 @@
 <body>
     <div id="container">
         <header>
-            <?=isset($_SESSION["login_user"]) ? "<div>". $nm . "님 환영합니다.</div>" : "" ?>
+            <?=isset($_SESSION["login_user"]) ? "<div>" . $nm . "님 환영합니다.</div>" : "" ?>
             <div>
                 <a href="list.php">리스트</a>
                 <?php if(isset($_SESSION["login_user"])) { ?> <!-- isset 변수값이 존재한다 면-->
@@ -123,5 +123,7 @@ foreach($array as $value)
 <!--
 - 페이징처리
 
+- i_board 배열이 필요한 이유? nm 이름을 가져오기 위해서
+조인걸때 그 i_board 안에 있는 i_user로 연결하려고
 
 -->

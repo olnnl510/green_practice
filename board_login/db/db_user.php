@@ -21,6 +21,7 @@
 
  function sel_user(&$param) { // php 깊은복사. &치면주소값 안치면그대로복사
     $uid = $param["uid"]; // 비번 안데려옴 uid키값 $uid밸류값
+    
     $sql = 
     "   SELECT i_user, uid, upw, nm, gender
         FROM t_user

@@ -12,14 +12,15 @@
         "upw" => $upw,
         "confirm_upw" => $confirm_upw,
         "nm" => $nm,
-        "gender" => $gender,
+        "gender" => $gender
     ];
 
     $result = ins_user($param);
     
-    echo "result : " , $result , "<br>";
-    echo "uid : " , $uid , "<br>";
-    echo "upw : " , $upw , "<br>";
-    echo "confirm_upw : " , $confirm_upw , "<br>";
-    echo "nm : " , $nm , "<br>";
-    echo "gender : " , $gender , "<br>";
+    echo "uid : " , $result , "<br>";
+    echo "uid : " , $upw , "<br>";
+    echo "uid : " , $confirm_upw , "<br>";
+    echo "uid : " , $nm , "<br>";
+    echo "uid : " , $gender , "<br>";
+    
+?>

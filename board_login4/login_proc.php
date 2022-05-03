@@ -1,6 +1,6 @@
 <?php
     include_once "db/db_user.php";
-    
+
     $uid = $_POST["uid"];
     $upw = $_POST["upw"];
 
@@ -12,13 +12,13 @@
     ];
 
     $result = sel_user($param);
-    if(empty($result)) {
+    if(empty($result)){
         echo "해당하는 아이디 없음";
         die;
     }
 
     echo "i_user : " , $result["i_user"] , "<br>";
-    echo "upw : " , $result["upw"] , "<br>";
+    echo "pw : " , $result["upw"] , "<br>";
 
     if($upw == $result["upw"]) {
         session_start();
