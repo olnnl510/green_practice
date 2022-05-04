@@ -3,16 +3,15 @@
     
     session_start();
     $nm = "";
-    $page = $_GET["page"];
-    if(!$page) {
-        $page = 1;
-    } else {
-        $page = intval($page); // string값을 정수형으로 변환시켜주는 함수 (형변환)
-    } // list.php 바로 치면 쿼리스트링x페이지 없을때
-    print " page : " . $page;
     if(isset($_SESSION["login_user"])) {
         $login_user = $_SESSION["login_user"];
         $nm = $login_user["nm"];
+    }
+    $list = sel_board_list($param); // 밑에서 반복문으로 뿌림
+
+    $page = 1;
+    if(isset($_GET["page"])) {
+        $page = intval($_GET["page"]); // string값을 정수형으로 변환시켜주는 함수 (형변환)
     }
     $row_count = 20;
     $param = [
@@ -20,8 +19,17 @@
         "start_idx" => ($page - 1 ) * $row_count // idx = index
     ];
     $paging_count = sel_paging_count($param); // 6이 넘어옴
-    $list = sel_board_list($param); // 밑에서 반복문으로 뿌림
+
+    if(isset($_POST['search_input_txt']) && $_POST['search_input_txt'] != "") {
+        $param += [
+            "search_select" => $_POST["search_select"], // select박스 value값
+            "search_input_txt" => $_POST["search_input_txt"] // 검색어
+        ]; // 배열과 배열 + : 배열 이어주는것
+        
+        $list = search_board($param); // DB조회 전달 후 결과 list를 받아온다
+    }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,7 +45,7 @@
             <?=isset($_SESSION["login_user"]) ? "<div>" . $nm . "님 환영합니다.</div>" : "" ?>
             <div>
                 <a href="list.php">리스트</a>
-                <?php if(isset($_SESSION["login_user"])) { ?> <!-- isset 변수값이 존재한다 면-->
+                <?php if(isset($_SESSION["login_user"])) { ?> <!-- isset 변수값이 존재한다면-->
                     <a href="write.php">글쓰기</a>
                     <a href="logout.php">로그아웃</a>
                 <?php } else { ?>
@@ -68,10 +76,26 @@
                 </tbody>
             </table>
             <div>
-                <?php for($i=1; $i<=$paging_count; $i++){ ?>
-                    <span><a href="list.php?page=<?=$i?>"><?=$i?></span>
+                <?php for($i=1; $i<=$paging_count; $i++) { ?>
+                    <span class="<?=$i===$page ? "pageSelected" : ""?>">
+                        <a href="list.php?page=<?=$i?>"><?=$i?></a>
+                    </span>
                 <?php } ?>
             </div>
+             <!--검색기능-->
+             <form method="post" action="list.php" >
+                <div>
+                    <select name="search_select">
+                        <option value="search_writer">작성자</option>
+                        <option value="search_title">제목</option>
+                        <option value="search_ctnt">제목+내용</option>
+                    </select>
+                    <div>
+                        <input type="text" name="search_input_txt">
+                        <input type="submit" value="검색">
+                    </div>
+                </div>
+            </form>
         </main>
     </div>
 </body>

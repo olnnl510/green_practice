@@ -57,7 +57,7 @@
                 FROM t_board A
                 INNER JOIN t_user B
                 ON A.i_user=B.i_user
-                WHERE A.i_board=${i_board}";
+                WHERE A.i_board=${i_board}"; // nm 쓰기위해 조인
 
         $conn = get_conn();
         $result = mysqli_query($conn, $sql);
@@ -94,6 +94,45 @@
 
         $conn = get_conn();
         $result = mysqli_query($conn, $sql);
+        mysqli_close($conn);
+        return $result;
+    }
+
+    function search_board(&$param) {
+        $conn = get_conn();
+        $search_select = $param['search_select']; // select선택값
+        $search_input_txt = $param['search_input_txt']; // 검색어
+        $textArray = explode(" ", $search_input_txt); // 검색어를 공백으로 나눈다
+        $where = "nm"; // sql 검색시 열(=속성,칼럼) 이름
+        $query ="
+        SELECT B.i_user, A.title, B.nm, A.created_at, A.ctnt
+        FROM t_board A
+        INNER JOIN t_user B
+        ON A.i_user=B.i_user
+        WHERE 
+        ";
+        switch($search_select) {
+            case "search_writer";
+                $where += ["B.nm"];
+                break;
+            case "search_title";
+                $where += ["A.title"];
+                break;
+            case "search_ctnt";
+                $where += ["A.ctnt", "A.title"];
+                break;
+        }
+
+        for ($i = 0; $i < count($textArray); $i++) {
+            for($j = 0; $j < count($where); $j++) {
+                $query = $query." $where[$j] LIKE '%$textArray[$i]%' ";
+                if(($i !== count($textArray) - 1) || ($j !== count($where) - 1)){ // 마지막 검색어가 아니라면 
+                    $query = $query."OR";
+                }
+            }
+        }
+
+        $result = mysqli_query($conn, $query);
         mysqli_close($conn);
         return $result;
     }
