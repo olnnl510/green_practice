@@ -16,11 +16,10 @@
     ];
 
     $result = ins_user($param);
-    
-    echo "uid : " , $result , "<br>";
-    echo "uid : " , $upw , "<br>";
-    echo "uid : " , $confirm_upw , "<br>";
-    echo "uid : " , $nm , "<br>";
-    echo "uid : " , $gender , "<br>";
-    
-?>
+
+    echo "result : " , $result , "<br>";
+    echo "uid : " , $uid , "<br>";
+    echo "upw : " , $upw , "<br>";
+    echo "confirm_upw : " , $confirm_upw , "<br>";
+    echo "nm : " , $uid , "<br>";
+    echo "gender : " , $uid , "<br>";

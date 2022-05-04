@@ -8,11 +8,11 @@
 
         $sql =
         "   INSERT INTO t_board(i_user, title, ctnt)
-            VALUES ($i_user, '$title', '$ctnt')
+            VALUES ($i_user, $title, $ctnt)
         ";
+
         $conn = get_conn();
         $result = mysqli_query($conn, $sql);
         mysqli_close($conn);
         return $result;
     }
-?>
